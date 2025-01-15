@@ -203,9 +203,9 @@ class HIV_FQI:
                     fixed_highscore = fixed_score
                     print("\033[32mTHIS WAS A RECORD!\033[0m")
                     if self.augment_state:                        
-                        self.save(f"models/best_FQI.pkl")
+                        self.save(f"src/models/best_FQI.pkl")
                     else:
-                        self.save(f"models/best_FQI.pkl")
+                        self.save(f"src/models/best_FQI.pkl")
                     if fixed_score > 3e10:                    
                         # evaluate agent in rand env
                         rand_score = self.mc_eval(rand_env, num_episodes=50)
@@ -214,7 +214,7 @@ class HIV_FQI:
                     print("Evaluating agent in rand env")
                     rand_score = self.mc_eval(rand_env, num_episodes=50)
                     print(f"{rand_score:e}")                    
-                    # self.save(f"models/best_FQI.pkl")
+                    # self.save(f"src/models/best_FQI.pkl")
 
             # collect new data on policy
             S_, A_, R_, S2_, D_, I_ = self.collect_samples(rand_env,num_samples=5000,on_policy=True)
