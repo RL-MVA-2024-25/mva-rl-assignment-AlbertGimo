@@ -17,7 +17,7 @@ rand_env = TimeLimit(
 # Don't modify the methods names and signatures, but you can add methods.
 # ENJOY!
 class ProjectAgent:
-    def __init__(self,path="models/best_FQI.pkl",augment_state=False):
+    def __init__(self,path="src/models/best_FQI.pkl",augment_state=False):
         self.agent = HIV_FQI(augment_state=augment_state)
         self.path = path
         file = Path(path)
@@ -37,4 +37,4 @@ class ProjectAgent:
     if __name__ == '__main__':
         agent = HIV_FQI(augment_state=False)
         agent.train()
-        # agent.train(path="models/FQI3.216e+10.pkl")
+        # agent.train(path="src/models/FQI3.216e+10.pkl")
